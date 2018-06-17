@@ -1,9 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mucar</groupId>
-	<artifactId>automationProject</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<dependencies>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ucar</groupId>
+  <artifactId>SeleniumVerifySearch</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -22,9 +23,6 @@
 			<version>0.14</version>
 		</dependency>
 	</dependencies>
-
-
+  
+  
 </project>
-
-
-
