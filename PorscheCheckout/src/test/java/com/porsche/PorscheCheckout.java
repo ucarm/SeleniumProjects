@@ -169,15 +169,15 @@ public class PorscheCheckout {
 		driver.findElement(By.xpath("//a[@class='subitem-entry'][.='Performance']")).click();
 
 //		23. Select 7-speed Porsche Doppelkupplung (PDK)
+		driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@id='vs_table_IMG_x_M250_x_c14_M250_x_shorttext']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']/span")).sendKeys(Keys.PAGE_DOWN);
-		driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']/span")).click();
-		Thread.sleep(1000);
+		int price7SpeedPDK = priceConverter(driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@class='pBox']/div")).getText());
 		driver.findElement(By.id("vs_table_IMG_x_M250")).sendKeys(Keys.PAGE_DOWN);
 	
 //		24. Select Porsche Ceramic Composite Brakes (PCCB)
 		Thread.sleep(1000);
-		driver.findElement(By.id("vs_table_IMG_x_M450")).click();
+		driver.findElement(By.id("vs_table_IMG_x_M450_x_c94_M450_x_shorttext")).click();
+		int priceOfPCCB = priceConverter(driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M450']//div[@class='pBox']/div")).getText());
 		
 //		25. Verify that Price for Equipment is the sum of Miami Blue price + 20" Carrera Sport Wheels + Power Sport Seats (14-way) with Memory Package + Interior Trim in
 //			Carbon Fiber i.c.w. Standard Interior + 7-speed Porsche Doppelkupplung (PDK) +
