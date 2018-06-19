@@ -169,7 +169,8 @@ public class PorscheCheckout {
 		driver.findElement(By.xpath("//a[@class='subitem-entry'][.='Performance']")).click();
 
 //		23. Select 7-speed Porsche Doppelkupplung (PDK)
-		driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@id='vs_table_IMG_x_M250_x_c14_M250_x_shorttext']")).click();
+//		driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@id='vs_table_IMG_x_M250_x_c14_M250_x_shorttext']")).click();
+		driver.findElement(By.xpath("//div[@data-link-id='M250']")).click();
 		Thread.sleep(1000);
 		int price7SpeedPDK = priceConverter(driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@class='pBox']/div")).getText());
 		driver.findElement(By.id("vs_table_IMG_x_M250")).sendKeys(Keys.PAGE_DOWN);
