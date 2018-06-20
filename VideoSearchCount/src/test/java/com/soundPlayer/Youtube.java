@@ -19,34 +19,62 @@ public class Youtube {
 		WebDriverManager.chromedriver().setup();
 		
 		Faker faker= new Faker();
-		ArrayList<String> results= new ArrayList<String>(); 
+		ArrayList<YoutubeSearchResults> allResults= new ArrayList<>();
 		WebDriver driver;
 //		driver.manage().window().fullscreen();
 //		driver.manage().window().maximize();
-		String result;
+		YoutubeSearchResults result;
 		int i=1;
-		while(i<10) {
+		while(i<3) {
+			result= new YoutubeSearchResults();
 			driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			result="";
 			driver.get("https://www.youtube.com/");
 			Thread.sleep(1000);
-			String search= faker.artist().name();
+			String searchName= faker.artist().name();
+			result.setName(searchName);
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//div[@id='container']//div[@id='search-input']/input")).sendKeys(search+Keys.ENTER);
+			driver.findElement(By.xpath("//div[@id='container']//div[@id='search-input']/input")).sendKeys(searchName+Keys.ENTER);
 			Thread.sleep(1000);
-			result= driver.findElement(By.xpath("//div[@id='container']//yt-formatted-string[@id='result-count']")).getText();
+			result.setFullSearchResult(driver.findElement(By.xpath("//div[@id='container']//yt-formatted-string[@id='result-count']")).getText());
 			Thread.sleep(1000);
-			System.out.println(search+"\t: "+result);
-			results.add(search+"\t: "+result);
+			result.setSearchCount(searchCount(result.getFullSearchResult()));
+			allResults.add(result);
+			System.out.println(result);
 			i++;
+			System.gc();
 			driver.close();
 		}
-		
-		for (String string : results) {
-			System.out.println(string);
+		System.out.println("\nARTIST NAME \t SEARCH COUNT");
+		for (YoutubeSearchResults youtubeSearchResults : allResults) {
+			System.out.println(youtubeSearchResults.getName()+"\t\t"+youtubeSearchResults.getSearchCount());
 		}
 		
+		System.out.println("\nWHO IS the MOST FAMOUS?");
+		YoutubeSearchResults famous= theMostSearchResult(allResults);
+		System.out.println(famous.getName() +" has the maximum number of search results on Youtube."
+												+"\nResult Count: "+famous.getSearchCount());
+	}
+
+	private static YoutubeSearchResults theMostSearchResult(ArrayList<YoutubeSearchResults> allResults) {
+		int max= allResults.get(0).getSearchCount();
+		int maxIndex=0;
+		for (int i=0; i<allResults.size(); i++) {
+			if(allResults.get(i).getSearchCount()>max) {
+				maxIndex=i;
+				max=allResults.get(i).getSearchCount();
+			}
+		}
+		return allResults.get(maxIndex);
+	}
+
+	private static int searchCount(String fullSearchResult) {
+		String num="";
+		for(int i=0; i<fullSearchResult.length(); i++) {
+			if(Character.isDigit(fullSearchResult.charAt(i)))
+				num+=fullSearchResult.charAt(i);
+		}
+		return Integer.parseInt(num);
 	}
 
 	
