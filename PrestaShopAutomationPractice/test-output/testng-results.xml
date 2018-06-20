@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="72885" started-at="2018-06-20T18:12:32Z" finished-at="2018-06-20T18:13:45Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="72885" started-at="2018-06-20T18:12:32Z" finished-at="2018-06-20T18:13:45Z">
+      <class name="com.prestashop.tests.PrestaShopTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="beforeTest" is-config="true" duration-ms="9382" started-at="2018-06-20T18:12:33Z" finished-at="2018-06-20T18:12:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="blankEmailTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="blankEmailTest" duration-ms="2629" started-at="2018-06-20T18:12:42Z" finished-at="2018-06-20T18:12:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankEmailTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="afterMethod" is-config="true" duration-ms="246" started-at="2018-06-20T18:12:45Z" finished-at="2018-06-20T18:12:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="beforeTest" is-config="true" duration-ms="6415" started-at="2018-06-20T18:12:45Z" finished-at="2018-06-20T18:12:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="blankPassTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="blankPassTest" duration-ms="2124" started-at="2018-06-20T18:12:51Z" finished-at="2018-06-20T18:12:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankPassTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="afterMethod" is-config="true" duration-ms="278" started-at="2018-06-20T18:12:53Z" finished-at="2018-06-20T18:12:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="beforeTest" is-config="true" duration-ms="6054" started-at="2018-06-20T18:12:54Z" finished-at="2018-06-20T18:13:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="invalidEmailTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="invalidEmailTest" duration-ms="2656" started-at="2018-06-20T18:13:00Z" finished-at="2018-06-20T18:13:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidEmailTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="afterMethod" is-config="true" duration-ms="268" started-at="2018-06-20T18:13:02Z" finished-at="2018-06-20T18:13:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="beforeTest" is-config="true" duration-ms="6516" started-at="2018-06-20T18:13:03Z" finished-at="2018-06-20T18:13:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="loginTest" duration-ms="24836" started-at="2018-06-20T18:13:09Z" finished-at="2018-06-20T18:13:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="afterMethod" is-config="true" duration-ms="289" started-at="2018-06-20T18:13:34Z" finished-at="2018-06-20T18:13:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="beforeTest" is-config="true" duration-ms="8561" started-at="2018-06-20T18:13:34Z" finished-at="2018-06-20T18:13:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="wrongCredentialsTest()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="wrongCredentialsTest" duration-ms="2363" started-at="2018-06-20T18:13:43Z" finished-at="2018-06-20T18:13:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- wrongCredentialsTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTest@464bee09]" name="afterMethod" is-config="true" duration-ms="177" started-at="2018-06-20T18:13:45Z" finished-at="2018-06-20T18:13:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.prestashop.tests.PrestaShopTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
