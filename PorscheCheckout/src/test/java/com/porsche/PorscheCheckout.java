@@ -117,7 +117,7 @@ public class PorscheCheckout {
 		driver.findElement(By.xpath("//a[@class='subitem-entry'][.='Seats']")).click();
 		// select ‘Power Sport Seats (14-way) with Memory Package’
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//div[@class='seat'])[2]/span")).click();
+		driver.findElement(By.xpath("(//div[@class='seat'])[2]")).click();
 		
 //		16. Verify that Price for Equipment is the sum of Miami Blue price + 20" Carrera Sport Wheels + Power Sport Seats (14-way) with Memory Package
 		Thread.sleep(1000);
