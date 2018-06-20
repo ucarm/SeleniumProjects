@@ -1,5 +1,6 @@
 package com.porsche;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -202,8 +203,9 @@ public class PorscheCheckout {
 		deleiveryPrice= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[7]")).getText());
 		priceEquipment= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[6]")).getText());
 		verifyPrices(totalPrice,(priceSecondPage+deleiveryPrice+priceEquipment),26);
-
-	
+//		Close the driver
+		driver.close();
+		System.out.println("Test is completed. "+LocalDateTime.now());
 	
 	}
 	
