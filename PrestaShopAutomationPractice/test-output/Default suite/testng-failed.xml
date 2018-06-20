@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.prestashop.tests.PrestaShopTest">
+      <class name="com.prestashop.tests.PrestaShopTestPositive">
         <methods>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="loginTest"/>
         </methods>
-      </class> <!-- com.prestashop.tests.PrestaShopTest -->
+      </class> <!-- com.prestashop.tests.PrestaShopTestPositive -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

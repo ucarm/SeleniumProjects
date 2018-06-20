@@ -1,61 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36421" started-at="2018-06-20T18:25:45Z" finished-at="2018-06-20T18:26:21Z">
+  <suite name="Default suite" duration-ms="35947" started-at="2018-06-20T18:34:04Z" finished-at="2018-06-20T18:34:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36421" started-at="2018-06-20T18:25:45Z" finished-at="2018-06-20T18:26:21Z">
-      <class name="com.prestashop.tests.PrestaShopTestNegative">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="beforeTest" is-config="true" duration-ms="7655" started-at="2018-06-20T18:25:45Z" finished-at="2018-06-20T18:25:53Z">
+    <test name="Default test" duration-ms="35947" started-at="2018-06-20T18:34:04Z" finished-at="2018-06-20T18:34:40Z">
+      <class name="com.prestashop.tests.PrestaShopTestPositive">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestPositive@464bee09]" name="beforeTest" is-config="true" duration-ms="10627" started-at="2018-06-20T18:34:04Z" finished-at="2018-06-20T18:34:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="blankEmailTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="blankEmailTest" duration-ms="1971" started-at="2018-06-20T18:25:53Z" finished-at="2018-06-20T18:25:54Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestPositive@464bee09]" name="loginTest" duration-ms="24988" started-at="2018-06-20T18:34:15Z" finished-at="2018-06-20T18:34:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- blankEmailTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="afterMethod" is-config="true" duration-ms="265" started-at="2018-06-20T18:25:54Z" finished-at="2018-06-20T18:25:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="beforeTest" is-config="true" duration-ms="6738" started-at="2018-06-20T18:25:55Z" finished-at="2018-06-20T18:26:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="blankPassTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="blankPassTest" duration-ms="2647" started-at="2018-06-20T18:26:01Z" finished-at="2018-06-20T18:26:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- blankPassTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="afterMethod" is-config="true" duration-ms="342" started-at="2018-06-20T18:26:04Z" finished-at="2018-06-20T18:26:04Z">
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTestPositive@464bee09]" name="afterMethod" is-config="true" duration-ms="286" started-at="2018-06-20T18:34:40Z" finished-at="2018-06-20T18:34:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="beforeTest" is-config="true" duration-ms="5757" started-at="2018-06-20T18:26:04Z" finished-at="2018-06-20T18:26:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="invalidEmailTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="invalidEmailTest" duration-ms="2452" started-at="2018-06-20T18:26:10Z" finished-at="2018-06-20T18:26:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidEmailTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="afterMethod" is-config="true" duration-ms="266" started-at="2018-06-20T18:26:13Z" finished-at="2018-06-20T18:26:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="beforeTest" is-config="true" duration-ms="5650" started-at="2018-06-20T18:26:13Z" finished-at="2018-06-20T18:26:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="wrongCredentialsTest()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="wrongCredentialsTest" duration-ms="2367" started-at="2018-06-20T18:26:19Z" finished-at="2018-06-20T18:26:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- wrongCredentialsTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.prestashop.tests.PrestaShopTestNegative@464bee09]" name="afterMethod" is-config="true" duration-ms="234" started-at="2018-06-20T18:26:21Z" finished-at="2018-06-20T18:26:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.prestashop.tests.PrestaShopTestNegative -->
+      </class> <!-- com.prestashop.tests.PrestaShopTestPositive -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

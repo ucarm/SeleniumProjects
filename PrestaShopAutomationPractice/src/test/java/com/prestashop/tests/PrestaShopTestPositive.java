@@ -26,7 +26,7 @@ public class PrestaShopTestPositive{
 	String phoneNumber;
 	
 	@BeforeMethod
-	public void beforeTest() {
+	public void beforeTest() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		faker= new Faker();
@@ -42,15 +42,16 @@ public class PrestaShopTestPositive{
 		zip=faker.address().zipCode().substring(0, 5);
 		country= faker.address().country();
 		phoneNumber = faker.phoneNumber().cellPhone();
-
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='email_create']")).sendKeys(email);
+//		click on create an account button
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@id='SubmitCreate']")).click();
 	}
 	
 	
 	@Test
 	public void  loginTest() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@id='email_create']")).sendKeys(email);
-//		click on create an account button
-		driver.findElement(By.xpath("//button[@id='SubmitCreate']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='customer_firstname']")).sendKeys(firstName);
 		Thread.sleep(1000);
