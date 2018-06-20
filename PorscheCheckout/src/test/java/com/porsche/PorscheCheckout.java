@@ -38,7 +38,7 @@ public class PorscheCheckout {
 
 //		FOLLOWING LINES ARE FOR CHANGING NEW WINDOW FOR DRIVER
 //		Store the current window handle
-//		String winHandleBefore = driver.getWindowHandle();
+		String winHandleBefore = driver.getWindowHandle();
 //		Perform the click operation that opens new window// Switch to new window opened
 		for(String winHandle : driver.getWindowHandles()){
 			driver.switchTo().window(winHandle);
@@ -204,6 +204,9 @@ public class PorscheCheckout {
 		priceEquipment= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[6]")).getText());
 		verifyPrices(totalPrice,(priceSecondPage+deleiveryPrice+priceEquipment),26);
 //		Close the driver
+		driver.close();
+//		Close the previously opened window
+		driver.switchTo().window(winHandleBefore);
 		driver.close();
 		System.out.println("Test is completed. "+LocalDateTime.now());
 	
