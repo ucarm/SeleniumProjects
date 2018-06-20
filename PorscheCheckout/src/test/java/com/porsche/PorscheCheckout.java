@@ -30,7 +30,7 @@ public class PorscheCheckout {
 		
 //	   	STEP 4.Remember the price of 718 Cayman
 		int priceHomePage= priceConverter(driver.findElement(By.xpath("//*[@id=\"m982120\"]/div[1]/div[2]/div[2]")).getText());
-		System.out.println("Price for the selected proche is $"+priceHomePage);
+		System.out.println("Base Price : $"+priceHomePage);
 		
 //		STEP 5. Click on Build & Price under 718 Cayman
 		driver.findElement(By.xpath("(//a[@class='m-01-link m-14-build'])[1]")).click();
@@ -99,8 +99,11 @@ public class PorscheCheckout {
 //		14. Verify that total price is the sum of base price + Price for Equipment + Delivery,Processing and Handling Fee
 		Thread.sleep(1000);
 		totalPrice=  priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[8]")).getText());
+		Thread.sleep(1000);
 		deleiveryPrice= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[7]")).getText());
+		Thread.sleep(1000);
 		priceEquipment= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[6]")).getText());
+		Thread.sleep(1000);
 		verifyPrices(totalPrice,(priceSecondPage+deleiveryPrice+priceEquipment),14);
 		
 //		15. Select seats ‘Power Sport Seats (14-way) with Memory Package’
@@ -167,15 +170,21 @@ public class PorscheCheckout {
 		Thread.sleep(1000);
 		//click on performance
 		driver.findElement(By.xpath("//a[@class='subitem-entry'][.='Performance']")).click();
+		Thread.sleep(1000);
 
 //		23. Select 7-speed Porsche Doppelkupplung (PDK)
-//		driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@id='vs_table_IMG_x_M250_x_c14_M250_x_shorttext']")).click();
 		driver.findElement(By.xpath("//div[@data-link-id='M250']")).click();
 		Thread.sleep(1000);
 		int price7SpeedPDK = priceConverter(driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M250']//div[@class='pBox']/div")).getText());
-		driver.findElement(By.id("vs_table_IMG_x_M250")).sendKeys(Keys.PAGE_DOWN);
 	
 //		24. Select Porsche Ceramic Composite Brakes (PCCB)
+		//open the Overview expander first
+		driver.findElement(By.xpath("//section[@id='s_conf_submenu']//div[@class='flyout-label-value']")).click();
+		Thread.sleep(1000);
+		//click on performance
+		driver.findElement(By.xpath("//a[@class='subitem-entry'][.='Performance']")).click();		
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//a[@class='subitem-entry'][.='Performance']")).sendKeys(Keys.PAGE_DOWN);
 		Thread.sleep(1000);
 		driver.findElement(By.id("vs_table_IMG_x_M450_x_c94_M450_x_shorttext")).click();
 		int priceOfPCCB = priceConverter(driver.findElement(By.xpath("//div[@id='vs_table_IMG_x_M450']//div[@class='pBox']/div")).getText());
@@ -183,9 +192,17 @@ public class PorscheCheckout {
 //		25. Verify that Price for Equipment is the sum of Miami Blue price + 20" Carrera Sport Wheels + Power Sport Seats (14-way) with Memory Package + Interior Trim in
 //			Carbon Fiber i.c.w. Standard Interior + 7-speed Porsche Doppelkupplung (PDK) +
 //			Porsche Ceramic Composite Brakes (PCCB)
-
-//		26. Verify that total price is the sum of base price + Price for Equipment + Delivery, Processing and Handling Fee
+		Thread.sleep(1000);
+		priceEquipment= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[6]")).getText());
+		verifyPrices(priceEquipment,(priceMiamiBlue+price20CarreraWheels+pricePowerSportSeats+priceCarbonFiber
+									+price7SpeedPDK+priceOfPCCB),20);
 		
+//		26. Verify that total price is the sum of base price + Price for Equipment + Delivery, Processing and Handling Fee
+		totalPrice=  priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[8]")).getText());
+		deleiveryPrice= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[7]")).getText());
+		priceEquipment= priceConverter(driver.findElement(By.xpath("(//div[@class='ccaPrice'])[6]")).getText());
+		verifyPrices(totalPrice,(priceSecondPage+deleiveryPrice+priceEquipment),26);
+
 	
 	
 	}
