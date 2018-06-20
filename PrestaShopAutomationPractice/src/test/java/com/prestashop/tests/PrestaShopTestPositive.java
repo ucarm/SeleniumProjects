@@ -12,11 +12,18 @@ import com.github.javafaker.Faker;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class PrestaShopTest {
+public class PrestaShopTestPositive{
 	WebDriver driver;
 	Faker faker;
 	String email;
 	String pass;
+	String firstName;
+	String lastName;
+	String address;
+	String city;
+	String zip;
+	String country;
+	String phoneNumber;
 	
 	@BeforeMethod
 	public void beforeTest() {
@@ -28,75 +35,22 @@ public class PrestaShopTest {
 		driver.findElement(By.xpath("//a[@class='login']")).click();
 		pass= faker.internet().password(8, 12);
 		email= faker.internet().emailAddress();
+		firstName= faker.name().firstName();
+		lastName= faker.name().lastName();
+		address= faker.address().streetAddress();
+		city= faker.address().city();
+		zip=faker.address().zipCode().substring(0, 5);
+		country= faker.address().country();
+		phoneNumber = faker.phoneNumber().cellPhone();
 
-
 	}
 	
-	@Test
-	public void wrongCredentialsTest() throws InterruptedException {
-		
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(pass);
-		// click on sign in button
-		driver.findElement(By.id("SubmitLogin")).click();
-		Thread.sleep(1000);
-		boolean isDisplayed= driver.getPageSource().contains("Authentication failed.");
-		Assert.assertTrue(isDisplayed);
-	}
-	
-	@Test
-	public void  invalidEmailTest() throws InterruptedException {
-		// generate a fake email address with the help of faker and sendKeys to login
-		email= faker.internet().avatar();
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(pass);
-		// click on sign in button
-		driver.findElement(By.id("SubmitLogin")).click();
-		Thread.sleep(1000);
-		boolean isDisplayed= driver.getPageSource().contains("Invalid email address");
-		Assert.assertTrue(isDisplayed);
-	}
-	
-	@Test
-	public void  blankEmailTest() throws InterruptedException {
-		email= "";// blank email
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(pass);
-		// click on sign in button
-		driver.findElement(By.id("SubmitLogin")).click();
-		Thread.sleep(1000);
-		boolean isDisplayed= driver.getPageSource().contains("An email address required");
-		Assert.assertTrue(isDisplayed);
-	}
-	
-	@Test
-	public void  blankPassTest() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
-		// generate fake password
-		pass= ""; // empty string
-		driver.findElement(By.xpath("//input[@type='password']")).sendKeys(pass);
-		// click on sign in button
-		driver.findElement(By.id("SubmitLogin")).click();
-		Thread.sleep(1000);
-		boolean isDisplayed= driver.getPageSource().contains("Password is required");
-		Assert.assertTrue(isDisplayed);
-	}
 	
 	@Test
 	public void  loginTest() throws InterruptedException {
 		driver.findElement(By.xpath("//input[@id='email_create']")).sendKeys(email);
-	//			// click on create an account button
+//		click on create an account button
 		driver.findElement(By.xpath("//button[@id='SubmitCreate']")).click();
-		Thread.sleep(1000);
-	//			boolean isDisplayed= driver.getPageSource().contains("Password is required");
-	//			Assert.assertTrue(isDisplayed);
-		String firstName= faker.name().firstName();
-		String lastName= faker.name().lastName();
-		String address= faker.address().streetAddress();
-		String city= faker.address().city();
-		String zip=faker.address().zipCode().substring(0, 5);
-		String country= faker.address().country();
-		String phoneNumber = faker.phoneNumber().cellPhone();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='customer_firstname']")).sendKeys(firstName);
 		Thread.sleep(1000);
