@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Test.ATestThatCleansUp">
+      <class name="com.amazon.AmazonTestCases">
         <methods>
-          <include name="googleSearch"/>
-          <include name="searchAmazon"/>
-          <include name="beforeMethods"/>
-          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="amazonSearch2"/>
+          <include name="amazonSearch3"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.Test.ATestThatCleansUp -->
+      </class> <!-- com.amazon.AmazonTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
