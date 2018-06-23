@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="65045" started-at="2018-06-23T08:48:06Z" finished-at="2018-06-23T08:49:11Z">
+  <suite name="Default suite" duration-ms="61929" started-at="2018-06-23T09:13:54Z" finished-at="2018-06-23T09:14:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="65045" started-at="2018-06-23T08:48:06Z" finished-at="2018-06-23T08:49:11Z">
+    <test name="Default test" duration-ms="61929" started-at="2018-06-23T09:13:54Z" finished-at="2018-06-23T09:14:56Z">
       <class name="com.amazon.AmazonTestCases">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="8817" started-at="2018-06-23T08:48:06Z" finished-at="2018-06-23T08:48:15Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="8127" started-at="2018-06-23T09:13:54Z" finished-at="2018-06-23T09:14:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="amazonSearch1()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch1" duration-ms="6473" started-at="2018-06-23T08:48:15Z" finished-at="2018-06-23T08:48:22Z">
+        <test-method status="PASS" signature="amazonSearch1()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch1" duration-ms="5078" started-at="2018-06-23T09:14:02Z" finished-at="2018-06-23T09:14:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amazonSearch1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="166" started-at="2018-06-23T08:48:22Z" finished-at="2018-06-23T08:48:22Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="238" started-at="2018-06-23T09:14:08Z" finished-at="2018-06-23T09:14:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="6187" started-at="2018-06-23T08:48:22Z" finished-at="2018-06-23T08:48:28Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="5648" started-at="2018-06-23T09:14:08Z" finished-at="2018-06-23T09:14:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="amazonSearch2()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch2" duration-ms="6575" started-at="2018-06-23T08:48:28Z" finished-at="2018-06-23T08:48:35Z">
+        <test-method status="PASS" signature="amazonSearch2()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch2" duration-ms="8626" started-at="2018-06-23T09:14:13Z" finished-at="2018-06-23T09:14:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amazonSearch2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="162" started-at="2018-06-23T08:48:35Z" finished-at="2018-06-23T08:48:35Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="129" started-at="2018-06-23T09:14:22Z" finished-at="2018-06-23T09:14:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="6317" started-at="2018-06-23T08:48:35Z" finished-at="2018-06-23T08:48:41Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="6481" started-at="2018-06-23T09:14:22Z" finished-at="2018-06-23T09:14:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="amazonSearch3()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch3" duration-ms="30129" started-at="2018-06-23T08:48:41Z" finished-at="2018-06-23T08:49:11Z">
+        <test-method status="PASS" signature="amazonSearch3()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch3" duration-ms="27370" started-at="2018-06-23T09:14:29Z" finished-at="2018-06-23T09:14:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amazonSearch3 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="163" started-at="2018-06-23T08:49:11Z" finished-at="2018-06-23T08:49:11Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="178" started-at="2018-06-23T09:14:56Z" finished-at="2018-06-23T09:14:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

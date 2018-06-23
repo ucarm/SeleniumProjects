@@ -56,6 +56,7 @@ public class AmazonTestCases {
 	public void amazonSearch2() throws InterruptedException {
 		//verfiy all the results contain the word "selenium" case insensitive 
 		str= "Selenium book";
+		Thread.sleep(1000);
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(str+Keys.ENTER);
 		
 //		Save all the search results in a List
@@ -88,7 +89,7 @@ public class AmazonTestCases {
 		//Check the prime checkbox
 //		primeCheckbox.sendKeys(Keys.PAGE_DOWN);
 		primeCheckbox.click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		try{
 			primeSelected =  Boolean.parseBoolean(primeCheckbox.getAttribute("value").toString());
 		}
