@@ -102,17 +102,10 @@ public class AmazonTestCases {
 		List<WebElement> resultsPrimeSelectedWeb = driver.findElements(By.xpath("//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal']"));
 		List<String> resultsPrimeSelected= new ArrayList<String>();
 		saveWebElementAsString(resultsPrimeSelected,resultsPrimeSelectedWeb );
-
 		Thread.sleep(1000);
-		System.out.println("Test after 2nd list loads");
-
-		Thread.sleep(1000);
-		
 		//Verify that top 5 results are still same
-		System.out.println("Before check5");
 		boolean first5= verfiyFirst5resultsSame(resultsPrimeNotSelected,resultsPrimeSelected);
 		Thread.sleep(10000);
-		System.out.println("After check5");
 		Assert.assertTrue(first5);
 		
 		
