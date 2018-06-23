@@ -6,7 +6,6 @@
       <class name="com.amazon.AmazonTestCases">
         <methods>
           <include name="afterMethod"/>
-          <include name="amazonSearch2"/>
           <include name="amazonSearch3"/>
           <include name="beforeMethod"/>
         </methods>

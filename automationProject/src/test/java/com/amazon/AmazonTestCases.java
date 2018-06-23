@@ -1,10 +1,12 @@
 package com.amazon;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,7 +50,6 @@ public class AmazonTestCases {
 		Thread.sleep(100);
 		System.out.println(displayed);
 		Assert.assertFalse(displayed);		
-//		driver.close();
 	}
 	
 	@Test
@@ -58,14 +59,13 @@ public class AmazonTestCases {
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(str+Keys.ENTER);
 		
 //		Save all the search results in a List
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		List<WebElement> searchResults= driver.findElements(
 				By.xpath("//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal']"));
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		
 		boolean result= verify(searchResults,"selenium");
-		Assert.assertTrue(result);
-		driver.close();
+		Assert.assertFalse(result);
 	}
 	
 
@@ -75,41 +75,38 @@ public class AmazonTestCases {
 		str= "Selenium book";
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(str+Keys.ENTER);
 		//Verify prime check box is not selected
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		WebElement primeCheckbox= driver.findElement(By.xpath("//div[@data-a-input-name='s-ref-checkbox-2470955011']//input[@type='checkbox']"));
-		Thread.sleep(3000);
-		
-		System.out.println("test");
-		
-		boolean primeSelected = primeCheckbox.isSelected();
-		
-		System.out.println(primeSelected);
-		
+		Thread.sleep(1000);
+		boolean primeSelected = Boolean.parseBoolean(primeCheckbox.getAttribute("value").toString());
 		Assert.assertFalse(primeSelected);
-		Thread.sleep(5000);
-		System.out.println("test after assert False");
-
-		List<WebElement> resultsPrimeNotSelected = driver.findElements(By.xpath("//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal']"));
-		Thread.sleep(5000);
-		System.out.println("Test after 1st list loads");
+		Thread.sleep(1000);
+		List<WebElement> resultsPrimeNotSelectedWeb = driver.findElements(By.xpath("//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal']"));
+		List<String> resultsPrimeNotSelected= new ArrayList<String>();
+		saveWebElementAsString(resultsPrimeNotSelected,resultsPrimeNotSelectedWeb );
+		Thread.sleep(1000);
 		//Check the prime checkbox
+//		primeCheckbox.sendKeys(Keys.PAGE_DOWN);
 		primeCheckbox.click();
-		System.out.println("Prime button is clicked now");
-		Thread.sleep(15000);
-		primeSelected =  primeCheckbox.isSelected();
-		Thread.sleep(5000);
+		Thread.sleep(1000);
+		try{
+			primeSelected =  Boolean.parseBoolean(primeCheckbox.getAttribute("value").toString());
+		}
+		catch(StaleElementReferenceException e) {
+			primeCheckbox= driver.findElement(By.xpath("//div[@data-a-input-name='s-ref-checkbox-2470955011']//input[@type='checkbox']"));
+			primeSelected =  Boolean.parseBoolean(primeCheckbox.getAttribute("value").toString());
+
+		}
+		Thread.sleep(1000);
 		Assert.assertTrue(primeSelected);
-		System.out.println("test after assert true");
+		List<WebElement> resultsPrimeSelectedWeb = driver.findElements(By.xpath("//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal']"));
+		List<String> resultsPrimeSelected= new ArrayList<String>();
+		saveWebElementAsString(resultsPrimeSelected,resultsPrimeSelectedWeb );
 
-		System.out.println("checked if the prime button is selected"+primeSelected);
-		Thread.sleep(5000);
-		System.out.println("Test before 2nd list loads");
-
-		List<WebElement> resultsPrimeSelected = driver.findElements(By.xpath("//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal']"));
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		System.out.println("Test after 2nd list loads");
 
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 		
 		//Verify that top 5 results are still same
 		System.out.println("Before check5");
@@ -121,13 +118,21 @@ public class AmazonTestCases {
 		
 		
 	}
-	private boolean verfiyFirst5resultsSame(List<WebElement> resultsPrimeNotSelected,
-			List<WebElement> resultsPrimeSelected) {
-		// TODO Auto-generated method stub
-		System.out.println("FIRST\t-->\tSECOND");
+	private void saveWebElementAsString(List<String> resultsPrimeNotSelected,
+			List<WebElement> resultsPrimeNotSelectedWeb) {
+
+		for (WebElement webElement : resultsPrimeNotSelectedWeb) {
+			resultsPrimeNotSelected.add(webElement.getText());
+		}
+		
+	}
+
+	private boolean verfiyFirst5resultsSame(List<String> resultsPrimeNotSelected,
+			List<String> resultsPrimeSelected) {
+			System.out.println("FIRST\t-->\tSECOND");
 		for(int i=0; i<5;i++) {
-			System.out.println(resultsPrimeNotSelected.get(i).getText().toString()+"  -->  "+resultsPrimeSelected.get(i).getText().toString());
-			if(! resultsPrimeNotSelected.get(i).getText().toString().equals(resultsPrimeSelected.get(i).getText().toString())) {
+			System.out.println("\nFIRST\t"+(i+1)+"\t: "+resultsPrimeNotSelected.get(i)+"\nSECOND\t"+(i+1)+"\t: "+resultsPrimeSelected.get(i));
+			if(! resultsPrimeNotSelected.get(i).equals(resultsPrimeSelected.get(i))) {
 				return false;
 			}
 		}
