@@ -27,13 +27,14 @@ public class AmazonTestCases {
 	public void beforeMethod() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.get("https://www.amazon.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 	}
 	
 	@Test
 	public void amazonSearch1() throws InterruptedException {
+		driver.get("https://www.amazon.com");
+
 		str= "Selenium Testing Tools Cookbook";
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(str+Keys.ENTER);
 		String resultXpath = "//h2[@class='a-size-medium s-inline  s-access-title  a-text-normal'][.='"+str+"']";
@@ -54,6 +55,8 @@ public class AmazonTestCases {
 	
 	@Test
 	public void amazonSearch2() throws InterruptedException {
+		driver.get("https://www.amazon.com");
+
 		//verfiy all the results contain the word "selenium" case insensitive 
 		str= "Selenium book";
 		Thread.sleep(1000);
@@ -73,6 +76,7 @@ public class AmazonTestCases {
 	
 	@Test
 	public void amazonSearch3() throws InterruptedException {
+		driver.get("https://www.amazon.com");
 		str= "Selenium book";
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(str+Keys.ENTER);
 		//Verify prime check box is not selected
@@ -108,10 +112,21 @@ public class AmazonTestCases {
 		boolean first5= verfiyFirst5resultsSame(resultsPrimeNotSelected,resultsPrimeSelected);
 		Thread.sleep(10000);
 		Assert.assertTrue(first5);
-		
-		
-		
 	}
+	
+	
+	@Test
+	public void etsyShopLocations() throws InterruptedException {
+		driver.get("https://www.etsy.com");
+		str="carpet";
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='search-query']")).sendKeys(str);
+		Thread.sleep(1000);
+//		Verify Shop location: Anywhere is checked
+		
+		
+	} 
+	
 	private void saveWebElementAsString(List<String> resultsPrimeNotSelected,
 			List<WebElement> resultsPrimeNotSelectedWeb) {
 
