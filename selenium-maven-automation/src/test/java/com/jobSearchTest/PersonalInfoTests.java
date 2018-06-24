@@ -90,7 +90,7 @@ public class PersonalInfoTests {
 	}
 	
 	@Test
-	public void submitFullApplication() {
+	public void submitFullApplication() throws InterruptedException {
 		driver.findElement(By.xpath("//input[@name='Name_First']")).sendKeys(firstName);
 		driver.findElement(By.xpath("//input[@name='Name_Last']")).sendKeys(lastName);
 		setGender(gender);
@@ -254,7 +254,7 @@ public class PersonalInfoTests {
 		
 	}
 
-	public void setSkillset(List<String> tech) {
+	public void setSkillset(List<String> tech) throws InterruptedException {
 		
 		for (String skill : tech) {
 			String technology = skill.substring(0, skill.length()-2);
@@ -277,6 +277,7 @@ public class PersonalInfoTests {
 			}
 			
 			String xpath = "//input[@rowvalue='"+ technology +"' and @columnvalue='"+ level +"']";
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(xpath)).click();
 		}	
 	}
