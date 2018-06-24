@@ -133,12 +133,10 @@ public class PersonalInfoTests {
 
 		
 		String ip="";
-		try(Scanner scan= new Scanner(System.in)){
-			System.out.print("Enter your IP address\t: ");
-			ip= scan.nextLine();
-		}
-		catch (Exception e) {
-			System.out.println("Sth went wrong");
+		try (java.util.Scanner s = new java.util.Scanner(new java.net.URL("https://api.ipify.org").openStream(), "UTF-8").useDelimiter("\\A")) {
+		    ip = s.next();
+		} catch (java.io.IOException e) {
+		    e.printStackTrace();
 		}
 		// ip check
 		String saveIpField= driver.findElement(By.xpath("//div[@class='infoContainer']//div[6]")).getText();
