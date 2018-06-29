@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24324" started-at="2018-06-24T10:07:29Z" finished-at="2018-06-24T10:07:53Z">
+  <suite name="Default suite" duration-ms="18761" started-at="2018-06-29T17:38:36Z" finished-at="2018-06-29T17:38:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24324" started-at="2018-06-24T10:07:29Z" finished-at="2018-06-24T10:07:53Z">
-      <class name="com.jobSearchTest.PersonalInfoTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.jobSearchTest.PersonalInfoTests@7ec68821]" name="setUp" is-config="true" duration-ms="3156" started-at="2018-06-24T10:07:29Z" finished-at="2018-06-24T10:07:32Z">
+    <test name="Default test" duration-ms="18761" started-at="2018-06-29T17:38:36Z" finished-at="2018-06-29T17:38:55Z">
+      <class name="com.zohoForms.WebElementsHW">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zohoForms.WebElementsHW@13deb50e]" name="beforeClass" is-config="true" duration-ms="5457" started-at="2018-06-29T17:38:36Z" finished-at="2018-06-29T17:38:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="navigateToHomePage()[pri:0, instance:com.jobSearchTest.PersonalInfoTests@7ec68821]" name="navigateToHomePage" is-config="true" duration-ms="1575" started-at="2018-06-24T10:07:32Z" finished-at="2018-06-24T10:07:34Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.zohoForms.WebElementsHW@13deb50e]" name="test1" duration-ms="12960" started-at="2018-06-29T17:38:42Z" finished-at="2018-06-29T17:38:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToHomePage -->
-        <test-method status="PASS" signature="fullNameEmptyTest()[pri:0, instance:com.jobSearchTest.PersonalInfoTests@7ec68821]" name="fullNameEmptyTest" duration-ms="365" started-at="2018-06-24T10:07:34Z" finished-at="2018-06-24T10:07:34Z">
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.zohoForms.WebElementsHW@13deb50e]" name="afterClass" is-config="true" duration-ms="307" started-at="2018-06-29T17:38:55Z" finished-at="2018-06-29T17:38:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fullNameEmptyTest -->
-        <test-method status="PASS" signature="navigateToHomePage()[pri:0, instance:com.jobSearchTest.PersonalInfoTests@7ec68821]" name="navigateToHomePage" is-config="true" duration-ms="314" started-at="2018-06-24T10:07:34Z" finished-at="2018-06-24T10:07:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- navigateToHomePage -->
-        <test-method status="PASS" signature="submitFullApplication()[pri:0, instance:com.jobSearchTest.PersonalInfoTests@7ec68821]" name="submitFullApplication" duration-ms="18876" started-at="2018-06-24T10:07:35Z" finished-at="2018-06-24T10:07:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitFullApplication -->
-      </class> <!-- com.jobSearchTest.PersonalInfoTests -->
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.zohoForms.WebElementsHW -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
