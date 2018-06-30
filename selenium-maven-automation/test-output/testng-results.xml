@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28661" started-at="2018-06-30T16:28:15Z" finished-at="2018-06-30T16:28:43Z">
+  <suite name="Default suite" duration-ms="6608" started-at="2018-06-30T20:16:21Z" finished-at="2018-06-30T20:16:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28661" started-at="2018-06-30T16:28:15Z" finished-at="2018-06-30T16:28:43Z">
-      <class name="com.amazon.ListAmazonResults">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.amazon.ListAmazonResults@13deb50e]" name="beforeClass" is-config="true" duration-ms="6139" started-at="2018-06-30T16:28:15Z" finished-at="2018-06-30T16:28:21Z">
+    <test name="Default test" duration-ms="6608" started-at="2018-06-30T20:16:21Z" finished-at="2018-06-30T20:16:28Z">
+      <class name="com.WebTables.WebTables">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.WebTables.WebTables@13deb50e]" name="beforeClass" is-config="true" duration-ms="4945" started-at="2018-06-30T20:16:21Z" finished-at="2018-06-30T20:16:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="getAllProductsV1()[pri:0, instance:com.amazon.ListAmazonResults@13deb50e]" name="getAllProductsV1" duration-ms="22184" started-at="2018-06-30T16:28:21Z" finished-at="2018-06-30T16:28:43Z">
+        <test-method status="PASS" signature="readScores()[pri:0, instance:com.WebTables.WebTables@13deb50e]" name="readScores" duration-ms="1443" started-at="2018-06-30T20:16:26Z" finished-at="2018-06-30T20:16:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAllProductsV1 -->
-        <test-method status="PASS" signature="getAllProductsV2()[pri:0, instance:com.amazon.ListAmazonResults@13deb50e]" name="getAllProductsV2" duration-ms="2" started-at="2018-06-30T16:28:43Z" finished-at="2018-06-30T16:28:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getAllProductsV2 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.amazon.ListAmazonResults@13deb50e]" name="afterClass" is-config="true" duration-ms="246" started-at="2018-06-30T16:28:43Z" finished-at="2018-06-30T16:28:43Z">
+        </test-method> <!-- readScores -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.WebTables.WebTables@13deb50e]" name="afterClass" is-config="true" duration-ms="170" started-at="2018-06-30T20:16:28Z" finished-at="2018-06-30T20:16:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.amazon.ListAmazonResults -->
+      </class> <!-- com.WebTables.WebTables -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

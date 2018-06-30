@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.amazon.ListAmazonResults">
+      <class name="com.WebTables.WebTables">
         <methods>
           <include name="beforeClass"/>
-          <include name="getAllProductsV1"/>
           <include name="afterClass"/>
+          <include name="readScores"/>
         </methods>
-      </class> <!-- com.amazon.ListAmazonResults -->
+      </class> <!-- com.WebTables.WebTables -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

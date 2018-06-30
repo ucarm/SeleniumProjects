@@ -55,7 +55,7 @@ public class ListAmazonResults {
 					continue;
 			String descXpath= "("+outerXpath+")["+(i+1)+"]//h2";
 			String priceXpath= "("+outerXpath+")["+(i+1)+"]//span[@class='sx-price sx-price-large']";
-			System.out.println("<<<<<<<<<<  ITEM #"+(i+1)+"   >>>>>>>>>");
+			System.out.println("========  ITEM #"+(i+1)+"   ========");
 			System.out.println("Descr\t:\t"+driver.findElement(By.xpath(descXpath)).getText());
 			System.out.println("Price\t:\t"+driver.findElement(By.xpath(priceXpath)).getText());
 			System.out.println("------------------------");
