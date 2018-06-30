@@ -1,5 +1,8 @@
 package com.WebTables;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -54,11 +57,26 @@ public class WebTablesHw {
 		Select dropdown = new Select(driver.findElement(By.id("recPerPage")));
 		dropdown.selectByVisibleText("100");
 		Thread.sleep(1000);
+		int totalNumberofApplication = Integer.parseInt(driver.findElement(By.id("total")).getText());
+		int howManyPages = totalNumberofApplication / 100 + 1;
+		System.out.println("there are " + howManyPages + " pages of records. Total records :" + totalNumberofApplication);
 		Map<Integer, String> allResults = new HashMap<>();
-		allResults = saveTableData("reportTab");
-
+		// loop thru all pages
+		for (int i = 1; i < howManyPages; i++) {
+			Thread.sleep(1000);
+			saveTableData("reportTab", allResults);
+			// click the next page
+			driver.findElement(By.className("nxtArrow")).click();
+			System.out.println("Page #"+i+ " is processed.");
+		}
 		printAllResults(allResults);
-
+		
+		int NumberOfEntriesInTheMap= allResults.size();
+		System.out.println("+++++++  RESULT +++++++++");
+		assertNotEquals(NumberOfEntriesInTheMap, totalNumberofApplication);
+		System.out.println("Size of the map  \t: "+NumberOfEntriesInTheMap);
+		System.out.println("Number of entries\t: "+totalNumberofApplication);
+		System.out.println("+++++++  +++++ +++++++++");
 	}
 
 	public void printAllResults(Map allResults) {
@@ -88,8 +106,7 @@ public class WebTablesHw {
 		System.out.println("===================");
 	}
 
-	public Map<Integer, String> saveTableData(String id) {
-		Map<Integer, String> output = new HashMap<>();
+	public void saveTableData(String id, Map AllData) {
 		String rowXpath = "//table[@id='" + id + "']/tbody/tr";
 		String colXpath = "//table[@id='" + id + "']/tbody/tr[1]/td";
 		int rowsCount = driver.findElements(By.xpath(rowXpath)).size();
@@ -107,11 +124,10 @@ public class WebTablesHw {
 				}
 			}
 			// substring to remove the last characher ( - at the end)
-			output.put(applicantId, applicantData.substring(0, applicantData.length() - 1));
+			AllData.put(applicantId, applicantData.substring(0, applicantData.length() - 1));
 			// System.out.println(applicantId+"\t"+applicantData);
 
 		}
-		return output;
 	}
 
 	@AfterClass
