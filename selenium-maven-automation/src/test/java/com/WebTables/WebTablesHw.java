@@ -59,7 +59,8 @@ public class WebTablesHw {
 		Thread.sleep(1000);
 		int totalNumberofApplication = Integer.parseInt(driver.findElement(By.id("total")).getText());
 		int howManyPages = totalNumberofApplication / 100 + 1;
-		System.out.println("there are " + howManyPages + " pages of records. Total records :" + totalNumberofApplication);
+		System.out
+				.println("there are " + howManyPages + " pages of records. Total records :" + totalNumberofApplication);
 		Map<Integer, String> allResults = new HashMap<>();
 		// loop thru all pages
 		for (int i = 1; i < howManyPages; i++) {
@@ -67,15 +68,15 @@ public class WebTablesHw {
 			saveTableData("reportTab", allResults);
 			// click the next page
 			driver.findElement(By.className("nxtArrow")).click();
-			System.out.println("Page #"+i+ " is processed.");
+			System.out.println("Page #" + i + " is processed.");
 		}
 		printAllResults(allResults);
-		
-		int NumberOfEntriesInTheMap= allResults.size();
+
+		int NumberOfEntriesInTheMap = allResults.size();
 		System.out.println("+++++++  RESULT +++++++++");
 		assertNotEquals(NumberOfEntriesInTheMap, totalNumberofApplication);
-		System.out.println("Size of the map  \t: "+NumberOfEntriesInTheMap);
-		System.out.println("Number of entries\t: "+totalNumberofApplication);
+		System.out.println("Size of the map  \t: " + NumberOfEntriesInTheMap);
+		System.out.println("Number of entries\t: " + totalNumberofApplication);
 		System.out.println("+++++++  +++++ +++++++++");
 	}
 
