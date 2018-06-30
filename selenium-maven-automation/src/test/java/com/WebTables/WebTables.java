@@ -63,8 +63,16 @@ public class WebTables {
 		
 		// loop it and print all data
 		// get number of rows and columns then nested loop
-		String rowXpath="//table[@id='worldCup']/tbody/tr";
-		String colXpath= "//table[@id='worldCup']/tbody/tr[1]/td";
+
+		
+		printTableData("worldCup");
+
+		softAssert.assertAll();
+	}
+	
+	public void printTableData(String id) {
+		String rowXpath="//table[@id='"+id+"']/tbody/tr";
+		String colXpath= "//table[@id='"+id+"']/tbody/tr[1]/td";
 		int rowsCount= driver.findElements(By.xpath(rowXpath)).size();
 		int colsCount= driver.findElements(By.xpath(colXpath)).size();
 		System.out.println(rowsCount+"x"+colsCount);
@@ -72,11 +80,16 @@ public class WebTables {
 		System.out.println("===================");
 		for(int row=1; row<=rowsCount; row++) {
 			for(int col=1; col<=colsCount; col++)
-				System.out.print(driver.findElement(By.xpath("("+rowXpath+")["+row+"]/td["+col+"]")).getText()+"\t");
+				System.out.print(driver.findElement(By.xpath("("+rowXpath+")["+row+"]/td["+col+"]")).getText()+"       \t");
 			System.out.println();
 		}
-		
-		softAssert.assertAll();
+		System.out.println("===================");		
+	}
+
+	@Test
+	public void applicantsData() {
+		driver.get("https://forms.zohopublic.com/murodil/report/Applicants/reportperma/DibkrcDh27GWoPQ9krhiTdlSN4_34rKc8ngubKgIMy8");
+		printTableData("reportTab");
 	}
 	
 	@AfterClass

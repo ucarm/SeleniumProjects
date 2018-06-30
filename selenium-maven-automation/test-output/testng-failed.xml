@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.WebTables.WebTables">
+      <class name="com.WebTables.WebTablesHw">
         <methods>
-          <include name="beforeClass"/>
           <include name="afterClass"/>
+          <include name="beforeClass"/>
           <include name="readScores"/>
         </methods>
-      </class> <!-- com.WebTables.WebTables -->
+      </class> <!-- com.WebTables.WebTablesHw -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
