@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.zohoForms.WebElementsHW">
+      <class name="com.amazon.ListAmazonResults">
         <methods>
-          <include name="afterClass"/>
-          <include name="test1"/>
           <include name="beforeClass"/>
+          <include name="getAllProductsV1"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.zohoForms.WebElementsHW -->
+      </class> <!-- com.amazon.ListAmazonResults -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
