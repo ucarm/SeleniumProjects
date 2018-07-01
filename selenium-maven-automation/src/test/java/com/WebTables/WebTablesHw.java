@@ -22,23 +22,12 @@ import org.testng.asserts.SoftAssert;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebTablesHw {
-	// 1) goto
-	// https://forms.zohopublic.com/murodil/report/Applicants/reportperma/DibkrcDh27GWoPQ9krhiTdlSN4_34rKc8ngubKgIMy8
-	// 2) Create a HashMap
-	// 3) change row number to 100, read all data on first page and put uniquID as a
-	// KEY
-	// and Applicant info as a Value to a map.
-	//
-	// applicants.put(29,"Amer, Sal-all@dsfdsf.com-554-434-4324-130000")
-	//
-	// 4) Click on next page , repeat step 3
-	// 5) Repeat step 4 for all pages
-	// 6) print count of items in a map. and assert it is matching
-	// with a number at the buttom
-
 	WebDriver driver;
 	String url = "https://forms.zohopublic.com/murodil/report/Applicants/reportperma/DibkrcDh27GWoPQ9krhiTdlSN4_34rKc8ngubKgIMy8";
 	SoftAssert softAssert = new SoftAssert();
+	// following final variable is needed to return back to System.out after saving the external ReFORT.TXT file
+	final PrintStream returnBacktoRegularOutput = System.out;
+	String fileName;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -48,19 +37,20 @@ public class WebTablesHw {
 		driver.manage().window().maximize();
 
 		// The test output can't be handled by the Jva console. Because it has more than
-		// 2k lines
-		// it outputs a pdf file
-		// output_.pdf file has all the lines command has
+		// 2k lines. Outputs a txt file
+		// output_.txt file has all the lines command has
 		LocalDateTime now = LocalDateTime.now();
 		// local date time for naming the output file
 		try {
-			PrintStream out = new PrintStream(new FileOutputStream("output_" + now.toString() + "_.txt"));
+			fileName= "Report_Output_" + now.toString() + "_.txt";
+			PrintStream out = new PrintStream(new FileOutputStream(fileName));
 			System.setOut(out);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("=========================\nCOMPANY Name\t\t: ****** INC\nTESTING project link\t: "+url+"\nENGINEER\t\t: Mehmet Ucar" );
-		System.out.println("TESTING Started at \t:"+now+"\n=========================\n");
+		System.out.println("=========================\nCOMPANY Name\t\t: ****** INC\nTESTING project link\t: " + url
+				+ "\nENGINEER\t\t: Mehmet Ucar");
+		System.out.println("TESTING Started at \t: " + now + "\n=========================\n");
 	}
 
 	@Test
@@ -75,11 +65,11 @@ public class WebTablesHw {
 		Thread.sleep(1000);
 		int totalNumberofApplication = Integer.parseInt(driver.findElement(By.id("total")).getText());
 		int howManyPages = totalNumberofApplication / 100 + 1;
-		System.out
-				.println("There are " + howManyPages + " pages of records.\nTotal records :" + totalNumberofApplication);
+		System.out.println(
+				"There are " + howManyPages + " pages of records.\nTotal records :" + totalNumberofApplication);
 		Map<Integer, String> allResults = new HashMap<>();
 		// loop thru all pages
-		for (int i = 1; i < howManyPages; i++) {
+		for (int i = 1; i < howManyPages - 20; i++) {
 			Thread.sleep(500);
 			saveTableData("reportTab", allResults);
 			// click the next page
@@ -92,7 +82,7 @@ public class WebTablesHw {
 		Thread.sleep(1000);
 		assertNotEquals(NumberOfEntriesInTheMap, totalNumberofApplication);
 		System.out.println("\nSize of the map  \t: " + NumberOfEntriesInTheMap);
-		System.out.println("\nNumber of entries\t: " + totalNumberofApplication+"\n");
+		System.out.println("\nNumber of entries\t: " + totalNumberofApplication + "\n");
 	}
 
 	public void printAllResults(Map<Integer, String> allResults) {
@@ -100,7 +90,6 @@ public class WebTablesHw {
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry) it.next();
 			System.out.println(pair.getKey() + " = " + pair.getValue());
-			it.remove();
 		}
 	}
 
@@ -121,9 +110,8 @@ public class WebTablesHw {
 					applicantData += cellValue + "-";
 				}
 			}
-			// substring to remove the last characher ( - at the end)
+			// substring to remove the last character ( - at the end)
 			allResults.put(applicantId, applicantData.substring(0, applicantData.length() - 1));
-			// System.out.println(applicantId+"\t"+applicantData);
 
 		}
 	}
@@ -131,8 +119,10 @@ public class WebTablesHw {
 	@AfterClass
 	public void afterClass() {
 		driver.close();
-		String now= LocalDateTime.now().toString(); 
-		System.out.println("=========================\nTESTING COMPLETED at :"+now);
+		String now = LocalDateTime.now().toString();
+		System.out.println("=========================\nTESTING COMPLETED at :" + now);
+		System.setOut(returnBacktoRegularOutput);
+		System.out.println("Report file is generated....  "+fileName);
 
 	}
 
