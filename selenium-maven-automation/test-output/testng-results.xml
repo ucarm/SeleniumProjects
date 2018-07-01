@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="35306" started-at="2018-06-30T21:44:44Z" finished-at="2018-06-30T21:45:20Z">
+  <suite name="Default suite" duration-ms="673000" started-at="2018-07-01T04:15:39Z" finished-at="2018-07-01T04:26:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="35306" started-at="2018-06-30T21:44:44Z" finished-at="2018-06-30T21:45:20Z">
+    <test name="Default test" duration-ms="673000" started-at="2018-07-01T04:15:39Z" finished-at="2018-07-01T04:26:52Z">
       <class name="com.WebTables.WebTablesHw">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="beforeClass" is-config="true" duration-ms="3240" started-at="2018-06-30T21:44:44Z" finished-at="2018-06-30T21:44:48Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="beforeClass" is-config="true" duration-ms="4026" started-at="2018-07-01T04:15:39Z" finished-at="2018-07-01T04:15:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="readScores()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="readScores" duration-ms="32033" started-at="2018-06-30T21:44:48Z" finished-at="2018-06-30T21:45:20Z">
+        <test-method status="PASS" signature="readScores()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="readScores" duration-ms="668780" started-at="2018-07-01T04:15:43Z" finished-at="2018-07-01T04:26:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readScores -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-06-30T21:45:20Z" finished-at="2018-06-30T21:45:20Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="afterClass" is-config="true" duration-ms="164" started-at="2018-07-01T04:26:51Z" finished-at="2018-07-01T04:26:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
