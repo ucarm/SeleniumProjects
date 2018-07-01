@@ -25,7 +25,7 @@ public class WebTablesHw {
 	WebDriver driver;
 	String url = "https://forms.zohopublic.com/murodil/report/Applicants/reportperma/DibkrcDh27GWoPQ9krhiTdlSN4_34rKc8ngubKgIMy8";
 	SoftAssert softAssert = new SoftAssert();
-	// following final variable is needed to return back to System.out after saving the external ReFORT.TXT file
+	// following final variable is needed to return back to System.out after saving the external Report.TXT file
 	final PrintStream returnBacktoRegularOutput = System.out;
 	String fileName;
 
@@ -49,7 +49,7 @@ public class WebTablesHw {
 			e.printStackTrace();
 		}
 		System.out.println("=========================\nCOMPANY Name\t\t: ****** INC\nTESTING project link\t: " + url
-				+ "\nENGINEER\t\t: Mehmet Ucar");
+				+ "\nTESTER\t\t: UcarM");
 		System.out.println("TESTING Started at \t: " + now + "\n=========================\n");
 	}
 
