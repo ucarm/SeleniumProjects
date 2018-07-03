@@ -1,0 +1,19 @@
+NAME		SEARCH COUNT
+Emmanuelle Dickinson	338
+Sincere Keeling PhD	13
+Grover Bogisich	0
+Freddy Mann MD	552000
+Oral Greenholt	0
+PASSED: youtubeSearch
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+

@@ -1,0 +1,21 @@
+SearchCount: 2		name:Maximilian Leuschke
+SearchCount: 586000		name:Darius Will
+SearchCount: 47		name:Miss Danielle Bednar
+searchCount	Name
+---------------------
+2		Maximilian Leuschke
+586000		Darius Will
+47		Miss Danielle Bednar
+PASSED: test1
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+

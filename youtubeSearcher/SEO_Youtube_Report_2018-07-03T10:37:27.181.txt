@@ -1,0 +1,25 @@
+searchCount	Name
+---------------------
+114000		Guiseppe Littel PhD
+77		Autumn Bernier Jr.
+188		Oren Quigley
+63		Deon Kuhlman
+2		Chelsea Leffler DDS
+3500		Bailey Schuster
+23		Dr. Adelbert Abbott
+0		Aric Huels
+1		Benedict Pfannerstill
+152		Zakary Hudson
+PASSED: test1
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+

@@ -1,0 +1,35 @@
+SearchCount: 64		name:Hershel Farrell
+SearchCount: 44		name:Mrs. Carleton Abbott
+SearchCount: 34		name:Elvie Russel
+SearchCount: 1		name:Arno Lubowitz
+SearchCount: 1		name:Dr. Letha Kozey
+SearchCount: 141		name:Aiden Corwin
+SearchCount: 3		name:Jayson Hilpert
+SearchCount: 580		name:Mariana Dooley
+SearchCount: 1		name:Mr. Mavis Buckridge
+SearchCount: 4510		name:Hudson Hackett V
+searchCount	Name
+---------------------
+64		Hershel Farrell
+44		Mrs. Carleton Abbott
+34		Elvie Russel
+1		Arno Lubowitz
+1		Dr. Letha Kozey
+141		Aiden Corwin
+3		Jayson Hilpert
+580		Mariana Dooley
+1		Mr. Mavis Buckridge
+4510		Hudson Hackett V
+PASSED: test1
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+

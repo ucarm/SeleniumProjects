@@ -43,7 +43,7 @@ public class MockarooTests {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://mockaroo.com/");
-
+		
 	}
 
 	@BeforeMethod

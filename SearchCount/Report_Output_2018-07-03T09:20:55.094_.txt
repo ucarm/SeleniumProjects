@@ -1,0 +1,19 @@
+NAME --> SEARCH COUNT
+Ezra Mann --> 25800
+Katrine Cassin --> 4
+Amanda Roberts --> 191000
+Mr. Ricardo Borer --> 57
+Scarlett Cartwright --> 1870
+PASSED: youtubeSearch
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 1, Failures: 0, Skips: 0
+===============================================
+
