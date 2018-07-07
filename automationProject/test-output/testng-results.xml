@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="61929" started-at="2018-06-23T09:13:54Z" finished-at="2018-06-23T09:14:56Z">
+  <suite name="Default suite" duration-ms="8196" started-at="2018-07-07T20:11:34Z" finished-at="2018-07-07T20:11:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="61929" started-at="2018-06-23T09:13:54Z" finished-at="2018-06-23T09:14:56Z">
-      <class name="com.amazon.AmazonTestCases">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="8127" started-at="2018-06-23T09:13:54Z" finished-at="2018-06-23T09:14:02Z">
+    <test name="Default test" duration-ms="8196" started-at="2018-07-07T20:11:34Z" finished-at="2018-07-07T20:11:42Z">
+      <class name="com.cyberFrameWork.switchTowindow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.cyberFrameWork.switchTowindow@f6c48ac]" name="setUp" is-config="true" duration-ms="6148" started-at="2018-07-07T20:11:34Z" finished-at="2018-07-07T20:11:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="amazonSearch1()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch1" duration-ms="5078" started-at="2018-06-23T09:14:02Z" finished-at="2018-06-23T09:14:08Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="switchByTitleTest()[pri:0, instance:com.cyberFrameWork.switchTowindow@f6c48ac]" name="switchByTitleTest" duration-ms="1863" started-at="2018-07-07T20:11:40Z" finished-at="2018-07-07T20:11:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- amazonSearch1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="238" started-at="2018-06-23T09:14:08Z" finished-at="2018-06-23T09:14:08Z">
+        </test-method> <!-- switchByTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.cyberFrameWork.switchTowindow@f6c48ac]" name="tearDown" is-config="true" duration-ms="106" started-at="2018-07-07T20:11:42Z" finished-at="2018-07-07T20:11:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="5648" started-at="2018-06-23T09:14:08Z" finished-at="2018-06-23T09:14:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="amazonSearch2()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch2" duration-ms="8626" started-at="2018-06-23T09:14:13Z" finished-at="2018-06-23T09:14:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- amazonSearch2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="129" started-at="2018-06-23T09:14:22Z" finished-at="2018-06-23T09:14:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="beforeMethod" is-config="true" duration-ms="6481" started-at="2018-06-23T09:14:22Z" finished-at="2018-06-23T09:14:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="amazonSearch3()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="amazonSearch3" duration-ms="27370" started-at="2018-06-23T09:14:29Z" finished-at="2018-06-23T09:14:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- amazonSearch3 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.amazon.AmazonTestCases@3abbfa04]" name="afterMethod" is-config="true" duration-ms="178" started-at="2018-06-23T09:14:56Z" finished-at="2018-06-23T09:14:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.amazon.AmazonTestCases -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.cyberFrameWork.switchTowindow -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

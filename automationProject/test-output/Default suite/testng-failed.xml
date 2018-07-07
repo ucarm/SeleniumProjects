@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.amazon.AmazonTestCases">
+      <class name="com.cyberFrameWork.switchTowindow">
         <methods>
-          <include name="afterMethod"/>
-          <include name="amazonSearch2"/>
-          <include name="beforeMethod"/>
+          <include name="switchByTitleTest"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.amazon.AmazonTestCases -->
+      </class> <!-- com.cyberFrameWork.switchTowindow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
