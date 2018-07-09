@@ -141,9 +141,9 @@ public class OrderPageTest {
 
 	@AfterClass
 	public void afterClass() {
-		// allOrdersPage.logout();
+		allOrdersPage.logout();
 		System.out.println("Done with driver. ");
-		// driver.close();
+		driver.close();
 	}
 	
 	
