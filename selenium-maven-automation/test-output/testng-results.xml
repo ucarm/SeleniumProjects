@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37214" started-at="2018-07-01T05:32:09Z" finished-at="2018-07-01T05:32:47Z">
+  <suite name="Default suite" duration-ms="9660" started-at="2018-07-09T18:54:25Z" finished-at="2018-07-09T18:54:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37214" started-at="2018-07-01T05:32:09Z" finished-at="2018-07-01T05:32:47Z">
-      <class name="com.WebTables.WebTablesHw">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="beforeClass" is-config="true" duration-ms="3315" started-at="2018-07-01T05:32:09Z" finished-at="2018-07-01T05:32:13Z">
+    <test name="Default test" duration-ms="9660" started-at="2018-07-09T18:54:25Z" finished-at="2018-07-09T18:54:34Z">
+      <class name="pomdesign.OrderPageTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="beforeClass" is-config="true" duration-ms="4966" started-at="2018-07-09T18:54:25Z" finished-at="2018-07-09T18:54:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="readScores()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="readScores" duration-ms="33742" started-at="2018-07-01T05:32:13Z" finished-at="2018-07-01T05:32:47Z">
+        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="67" started-at="2018-07-09T18:54:30Z" finished-at="2018-07-09T18:54:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- readScores -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.WebTables.WebTablesHw@5f341870]" name="afterClass" is-config="true" duration-ms="119" started-at="2018-07-01T05:32:47Z" finished-at="2018-07-01T05:32:47Z">
+        </test-method> <!-- setUpApplication -->
+        <test-method status="PASS" signature="goToOrderPage()[pri:1, instance:pomdesign.OrderPageTest@239963d8]" name="goToOrderPage" duration-ms="1516" started-at="2018-07-09T18:54:30Z" description="Login, click o the orders page" finished-at="2018-07-09T18:54:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToOrderPage -->
+        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="2" started-at="2018-07-09T18:54:31Z" finished-at="2018-07-09T18:54:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApplication -->
+        <test-method status="PASS" signature="processTheLoginPage()[pri:2, instance:pomdesign.OrderPageTest@239963d8]" name="processTheLoginPage" duration-ms="2211" started-at="2018-07-09T18:54:31Z" description="Fill out the Order form and click on process button" finished-at="2018-07-09T18:54:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- processTheLoginPage -->
+        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="2" started-at="2018-07-09T18:54:33Z" finished-at="2018-07-09T18:54:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApplication -->
+        <test-method status="PASS" signature="allOrdersVerification()[pri:3, instance:pomdesign.OrderPageTest@239963d8]" name="allOrdersVerification" duration-ms="852" started-at="2018-07-09T18:54:33Z" description="verify if all are saved into the viewAllOrders page" finished-at="2018-07-09T18:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- allOrdersVerification -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="afterClass" is-config="true" duration-ms="1" started-at="2018-07-09T18:54:34Z" finished-at="2018-07-09T18:54:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.WebTables.WebTablesHw -->
+      </class> <!-- pomdesign.OrderPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

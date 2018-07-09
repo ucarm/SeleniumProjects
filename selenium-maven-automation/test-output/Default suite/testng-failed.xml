@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.WebTables.WebTablesHw">
+      <class name="pomdesign.OrderPageTest">
         <methods>
-          <include name="afterClass"/>
+          <include name="allOrdersVerification"/>
           <include name="beforeClass"/>
-          <include name="readScores"/>
+          <include name="afterClass"/>
+          <include name="setUpApplication"/>
         </methods>
-      </class> <!-- com.WebTables.WebTablesHw -->
+      </class> <!-- pomdesign.OrderPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
