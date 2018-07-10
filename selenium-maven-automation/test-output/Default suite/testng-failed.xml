@@ -5,8 +5,10 @@
     <classes>
       <class name="pomdesign.OrderPageTest">
         <methods>
+          <include name="processTheLoginPage"/>
           <include name="allOrdersVerification"/>
           <include name="beforeClass"/>
+          <include name="goToOrderPage"/>
           <include name="afterClass"/>
           <include name="setUpApplication"/>
         </methods>

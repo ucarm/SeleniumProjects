@@ -52,7 +52,7 @@ public class WebOrdersTest {
 		// loginPage.password.sendKeys(password);
 		// loginPage.loginButton.click();
 
-		loginPage.login(userId, password);
+		loginPage.login(driver, userId, password);
 
 		allOrdersPage = new AllOrdersPage(driver);
 		assertTrue(allOrdersPage.webOrders.isDisplayed(), "WebOrder title is not diplayed");
@@ -69,7 +69,7 @@ public class WebOrdersTest {
 	@Test(description = "Verify the default product names, prices, and discount", priority = 2)
 	public void availableProductsTest() {
 		assertEquals(driver.getTitle(), "Web Orders Login", "Login page is not displayed");
-		loginPage.login(userId, password);
+		loginPage.login(driver, userId, password);
 		allOrdersPage = new AllOrdersPage(driver);
 		allOrdersPage.viewAllProducts.click();
 		productsPage = new ProductsPage(driver);

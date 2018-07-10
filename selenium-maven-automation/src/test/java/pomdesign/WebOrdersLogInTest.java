@@ -44,7 +44,7 @@ public class WebOrdersLogInTest {
 //		loginPage.password.sendKeys("test");
 //		loginPage.loginButton.click();
 		
-		loginPage.login("Tester", "test");
+		loginPage.login(driver,"Tester", "test");
 	
 	}
 	

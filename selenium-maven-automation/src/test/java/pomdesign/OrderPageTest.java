@@ -3,12 +3,15 @@ package pomdesign;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +19,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.internal.Utils;
 
 import com.github.javafaker.Faker;
 
@@ -23,6 +27,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.AllOrdersPage;
 import pages.OrderPage;
 import pages.WebOrdersLoginPage;
+import utilities.MyUtils;
 
 public class OrderPageTest {
 	WebDriver driver;
@@ -30,11 +35,11 @@ public class OrderPageTest {
 	AllOrdersPage allOrdersPage;
 	WebOrdersLoginPage loginPage;
 	Faker data;
-	
+
 	String username = "Tester";
 	String password = "test";
 
-	//values to verify the saved order
+	// values to verify the saved order
 	String productName;
 	int quantity;
 	String fullName;
@@ -45,16 +50,16 @@ public class OrderPageTest {
 	String cardType;
 	String CardNr;
 	String exp;
-	
+
 	@BeforeClass
 	public void beforeClass() {
 		System.out.println("Set up selenium");
 		WebDriverManager.chromedriver().setup();
 		data = new Faker();
 		driver = new ChromeDriver();
-		driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
 
 	}
 
@@ -67,17 +72,24 @@ public class OrderPageTest {
 
 	@Test(description = "Login, click o the orders page", priority = 1)
 	public void goToOrderPage() {
-		loginPage.login(username, password);
+		MyUtils.takeScreenShot(driver, "Login Page before Login");
+		loginPage.login(driver, username, password);
+		MyUtils.takeScreenShot(driver, "Logged In");
 		allOrdersPage.orderTab.click();
-		assertTrue(orderPage.orderTitle.getText().contains("Order"));
-
+		MyUtils.takeScreenShot(driver, "Orders page clicked");
+		try {
+			assertTrue(orderPage.orderTitle.getText().contains("Order"));
+		} catch (AssertionError e) {
+			MyUtils.takeScreenShot(driver, "ERROR -Login is failed ");
+			e.getMessage();
+		}
 	}
 
 	@Test(description = "Fill out the Order form and click on process button", priority = 2)
 	public void processTheLoginPage() throws InterruptedException {
 		// select a random index 1-3 inclusive to choose a random product;
 		int productIndex = data.number().numberBetween(0, 3);
-		productName= productNameConverter(productIndex);
+		productName = productNameConverter(productIndex);
 		quantity = data.number().numberBetween(1, 1000);
 		fullName = data.name().fullName();
 		street = data.address().streetAddress();
@@ -89,7 +101,7 @@ public class OrderPageTest {
 		CardNr = data.finance().creditCard().replaceAll("-", "");
 		exp = generateExpiration();
 		// all values are generated
-		
+
 		orderPage.selectProductDropDown(productIndex);
 		orderPage.quantity.clear();
 		orderPage.quantity.sendKeys(String.valueOf(quantity));
@@ -100,44 +112,53 @@ public class OrderPageTest {
 		orderPage.state.sendKeys(state);
 		orderPage.zip.sendKeys(zip);
 
+		MyUtils.takeScreenShot(driver, "Order Page data is entered");
+
 		orderPage.selectCreditCardTypeByIndex(cardTypeIndex);
 		orderPage.creditCardNum.sendKeys(CardNr);
 		orderPage.expDate.sendKeys(exp);
 		// click on process button
+
+		MyUtils.takeScreenShot(driver, "Credit card data is entered in order page");
+
 		orderPage.processButton.click();
 
 		String actual = orderPage.messageAfterProcess.getText().trim();
 		String expected = "New order has been successfully added.";
-		assertEquals(actual, expected);
+		try {
+			assertEquals(actual, expected);
+			MyUtils.takeScreenShot(driver, "new order is added.");
 
+		} catch (AssertionError e) {
+			MyUtils.takeScreenShot(driver, "Error something unexpected detected in order page");
+
+		}
 	}
-	
-	@Test(description="verify if all are saved into the viewAllOrders page", priority=3)
+
+	@Test(description = "verify if all are saved into the viewAllOrders page", priority = 3)
 	public void allOrdersVerification() {
 		// go to view all orders page.
 		allOrdersPage.viewAllOrders.click();
-		
+
 		// print all the rows;
-		List <WebElement> allOrdersList= allOrdersPage.ordersTable.findElements(By.tagName("tr"));
+		List<WebElement> allOrdersList = allOrdersPage.ordersTable.findElements(By.tagName("tr"));
 		for (WebElement orders : allOrdersList) {
 			System.out.println(orders.getText());
 		}
 		// select the most added entry (row 2) ans save the output
-		
+
 		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/uuuu");
-		LocalDate localdate= LocalDate.now();
-		String dateToBeDisplayed= localdate.format(dateFormatter);
-		
-		
-		String actual= allOrdersList.get(1).getText();
-		String expected= fullName+" "+productName+" "+quantity+" "+dateToBeDisplayed+" "+
-							street+" "+ city+" "+state+" "+zip+" "+cardType+" "+CardNr+" "+exp;
-		
-		System.out.println("-------------\nActual\t\t:"+actual+"\n"+"Expected\t:"+expected+"\n-------------");
-		
+		LocalDate localdate = LocalDate.now();
+		String dateToBeDisplayed = localdate.format(dateFormatter);
+
+		String actual = allOrdersList.get(1).getText();
+		String expected = fullName + " " + productName + " " + quantity + " " + dateToBeDisplayed + " " + street + " "
+				+ city + " " + state + " " + zip + " " + cardType + " " + CardNr + " " + exp;
+
+		System.out.println("-------------\nActual\t\t:" + actual + "\n" + "Expected\t:" + expected + "\n-------------");
+
 		assertEquals(actual, expected);
 	}
-
 
 	@AfterClass
 	public void afterClass() {
@@ -145,8 +166,7 @@ public class OrderPageTest {
 		System.out.println("Done with driver. ");
 		driver.close();
 	}
-	
-	
+
 	public String productNameConverter(int productIndex) {
 		String result = "";
 		switch (productIndex) {

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.MyUtils;
+
 public class WebOrdersLoginPage {
 	
 	// we need a constructer to initilize/locate all the items
@@ -28,9 +30,10 @@ public class WebOrdersLoginPage {
 	@FindBy(id="ctl00_MainContent_status")
 	public WebElement invalidUserNameErrMsg;
 	
-	public void login(String uid, String pwd) {
+	public void login(WebDriver driver, String uid, String pwd) {
 		userName.sendKeys(uid);
 		password.sendKeys(pwd);
+		MyUtils.takeScreenShot(driver, "Login Successful/LoggedIn");
 		loginButton.click();
 	}
 	

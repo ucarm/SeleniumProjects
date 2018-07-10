@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14991" started-at="2018-07-09T19:00:55Z" finished-at="2018-07-09T19:01:10Z">
+  <suite name="Default suite" duration-ms="11208" started-at="2018-07-10T06:37:46Z" finished-at="2018-07-10T06:37:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14991" started-at="2018-07-09T19:00:55Z" finished-at="2018-07-09T19:01:10Z">
+    <test name="Default test" duration-ms="11208" started-at="2018-07-10T06:37:46Z" finished-at="2018-07-10T06:37:57Z">
       <class name="pomdesign.OrderPageTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="beforeClass" is-config="true" duration-ms="10157" started-at="2018-07-09T19:00:55Z" finished-at="2018-07-09T19:01:05Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="beforeClass" is-config="true" duration-ms="4241" started-at="2018-07-10T06:37:46Z" finished-at="2018-07-10T06:37:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="51" started-at="2018-07-09T19:01:06Z" finished-at="2018-07-09T19:01:06Z">
+        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="61" started-at="2018-07-10T06:37:50Z" finished-at="2018-07-10T06:37:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpApplication -->
-        <test-method status="PASS" signature="goToOrderPage()[pri:1, instance:pomdesign.OrderPageTest@239963d8]" name="goToOrderPage" duration-ms="1391" started-at="2018-07-09T19:01:06Z" description="Login, click o the orders page" finished-at="2018-07-09T19:01:07Z">
+        <test-method status="PASS" signature="goToOrderPage()[pri:1, instance:pomdesign.OrderPageTest@239963d8]" name="goToOrderPage" duration-ms="2408" started-at="2018-07-10T06:37:50Z" description="Login, click o the orders page" finished-at="2018-07-10T06:37:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goToOrderPage -->
-        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="2" started-at="2018-07-09T19:01:07Z" finished-at="2018-07-09T19:01:07Z">
+        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="2" started-at="2018-07-10T06:37:53Z" finished-at="2018-07-10T06:37:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpApplication -->
-        <test-method status="PASS" signature="processTheLoginPage()[pri:2, instance:pomdesign.OrderPageTest@239963d8]" name="processTheLoginPage" duration-ms="1955" started-at="2018-07-09T19:01:07Z" description="Fill out the Order form and click on process button" finished-at="2018-07-09T19:01:09Z">
+        <test-method status="PASS" signature="processTheLoginPage()[pri:2, instance:pomdesign.OrderPageTest@239963d8]" name="processTheLoginPage" duration-ms="2797" started-at="2018-07-10T06:37:53Z" description="Fill out the Order form and click on process button" finished-at="2018-07-10T06:37:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- processTheLoginPage -->
-        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="3" started-at="2018-07-09T19:01:09Z" finished-at="2018-07-09T19:01:09Z">
+        <test-method status="PASS" signature="setUpApplication()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="setUpApplication" is-config="true" duration-ms="2" started-at="2018-07-10T06:37:55Z" finished-at="2018-07-10T06:37:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpApplication -->
-        <test-method status="PASS" signature="allOrdersVerification()[pri:3, instance:pomdesign.OrderPageTest@239963d8]" name="allOrdersVerification" duration-ms="900" started-at="2018-07-09T19:01:09Z" description="verify if all are saved into the viewAllOrders page" finished-at="2018-07-09T19:01:10Z">
+        <test-method status="PASS" signature="allOrdersVerification()[pri:3, instance:pomdesign.OrderPageTest@239963d8]" name="allOrdersVerification" duration-ms="922" started-at="2018-07-10T06:37:55Z" description="verify if all are saved into the viewAllOrders page" finished-at="2018-07-10T06:37:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allOrdersVerification -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="afterClass" is-config="true" duration-ms="483" started-at="2018-07-09T19:01:10Z" finished-at="2018-07-09T19:01:10Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:pomdesign.OrderPageTest@239963d8]" name="afterClass" is-config="true" duration-ms="733" started-at="2018-07-10T06:37:56Z" finished-at="2018-07-10T06:37:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
